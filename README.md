@@ -1,0 +1,2 @@
+# Architectures_iTunes_Searcher
+Архитектурные паттерны
