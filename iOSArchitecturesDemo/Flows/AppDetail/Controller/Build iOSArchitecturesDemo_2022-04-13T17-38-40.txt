@@ -1,0 +1,56 @@
+
+Showing Recent Errors Only
+
+Prepare build
+note: Using new build system
+note: Planning
+note: Build preparation complete
+note: Building targets in dependency order
+error: Cycle inside Alamofire; building could produce unreliable results. This usually can be resolved by moving the target's Headers build phase before Compile Sources.
+Cycle details:
+→ Target 'Alamofire' has link command with output '/Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Alamofire'
+○ Target 'Alamofire' has compile command for Swift source files
+○ Target 'Alamofire' has copy command from '/Users/konstantinsmondrik/Documents/GeakBreins/ФакультетiOS разработки/Архитектуры и шаблоны проектирования/Architectures_iTunes_Searcher_KS/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h' to '/Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h'
+○ Target 'Alamofire' has compile command with input '/Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Alamofire.build/DerivedSources/Alamofire_vers.c'
+
+
+Raw dependency cycle trace:
+
+target:  ->
+
+node: <all> ->
+
+command: <all> ->
+
+node: /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Alamofire ->
+
+command: target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5-:Debug:Ld /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Alamofire normal ->
+
+CYCLE POINT ->
+
+node: /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/x86_64/AFError.o ->
+
+command: target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5-:Debug:CompileSwiftSources normal x86_64 com.apple.xcode.tools.swift.compiler ->
+
+node: /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h ->
+
+command: target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5-:Debug:CpHeader /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework/Headers/Alamofire-umbrella.h /Users/konstantinsmondrik/Documents/GeakBreins/ФакультетiOS разработки/Архитектуры и шаблоны проектирования/Architectures_iTunes_Searcher_KS/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h ->
+
+node: <target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5--phase0-compile-sources> ->
+
+command: Gate target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5--phase0-compile-sources ->
+
+node: /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/x86_64/Alamofire_vers.o ->
+
+command: target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5-:Debug:CompileC /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/x86_64/Alamofire_vers.o /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Alamofire.build/DerivedSources/Alamofire_vers.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler ->
+
+node: <target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5--generated-headers> ->
+
+command: Gate target-Alamofire-8699adb1dd336b26511df848a716bd4254359440231fb92a8a9d64111aeb16e5--generated-headers ->
+
+node: /Users/konstantinsmondrik/Library/Developer/Xcode/DerivedData/iOSArchitecturesDemo-hfxtsuzvyoqeujerwqtsjwbnfycz/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/Alamofire.build/Objects-normal/x86_64/AFError.o
+
+
+
+
+Build failed    13.04.2022, 17:38    0.2 seconds
