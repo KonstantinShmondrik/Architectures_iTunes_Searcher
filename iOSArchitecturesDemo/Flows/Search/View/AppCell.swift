@@ -94,4 +94,7 @@ final class AppCell: UITableViewCell {
             self.ratingLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -40.0)
             ])
     }
+    
+    
+    
 }

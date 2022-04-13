@@ -19,12 +19,12 @@ final class AppDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureUI()
+//        self.configureUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.configureUI()
+//        self.configureUI()
     }
     
     // MARK: - UI

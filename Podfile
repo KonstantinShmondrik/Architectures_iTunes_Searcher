@@ -6,6 +6,6 @@ target 'iOSArchitecturesDemo' do
   use_frameworks!
 
   # Pods for iOSArchitecturesDemo
-  pod 'Alamofire', '~> 4.6'
+  pod 'Alamofire', '~> 5.5'
 
 end
