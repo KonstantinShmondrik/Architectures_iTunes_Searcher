@@ -16,6 +16,8 @@ final class AppDetailViewController: UIViewController {
     
     lazy var headerViewController = AppDetailHeaderViewController(app: self.app)
     
+    lazy var descriptionViewController = AppDescriptionViewController(app: self.app)
+    
     //    private var appDetailView: AppDetailView {
     //        return self.view as! AppDetailView
     //}
@@ -73,16 +75,18 @@ final class AppDetailViewController: UIViewController {
         
         // TODO: ДЗ, сделать другие сабмодули
         
-        let descriptionViewController = UIViewController()
-        self.addChild(descriptionViewController)
-        self.view.addSubview(descriptionViewController.view)
-        descriptionViewController.didMove(toParent: self)
-        descriptionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+//        let descriptionViewController = UIViewController()
+        self.addChild(self.descriptionViewController)
+        self.view.addSubview(self.descriptionViewController.view)
+        self.descriptionViewController.didMove(toParent: self)
+       
+        self.descriptionViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            descriptionViewController.view.topAnchor.constraint(equalTo: self.headerViewController.view.bottomAnchor),
-            descriptionViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            descriptionViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            descriptionViewController.view.heightAnchor.constraint(equalToConstant: 250.0)
+            self.descriptionViewController.view.topAnchor.constraint(equalTo: self.headerViewController.view.bottomAnchor),
+            self.descriptionViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            self.descriptionViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            self.descriptionViewController.view.heightAnchor.constraint(equalToConstant: 250.0)
         ])
     }
     
