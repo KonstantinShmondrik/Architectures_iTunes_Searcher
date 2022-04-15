@@ -10,6 +10,8 @@ import UIKit
 
 final class SongCell: UITableViewCell {
     
+    private let imageDownloader = ImageDownloader()
+    
     // MARK: - Subviews
     
     private(set) lazy var albumLogoImageView: UIImageView = {
@@ -67,9 +69,12 @@ final class SongCell: UITableViewCell {
         self.artistNameLabel.text = cellModel.artistName
         self.collectionNameLabel.text = cellModel.collectionName
         
+        guard let url = cellModel.artwork else { return }
+        self.imageDownloader.getImage(fromUrl: url) { [weak self] (image, _) in
+            self?.albumLogoImageView.image = image
+        }
         
-        
-        self.albumLogoImageView.image = UIImage(named: "note")
+//        self.albumLogoImageView.image = UIImage(named: "note")
     }
     
     // MARK: - UI

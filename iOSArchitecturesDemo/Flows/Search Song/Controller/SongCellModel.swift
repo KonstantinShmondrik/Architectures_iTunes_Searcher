@@ -17,11 +17,12 @@ struct SongCellModel {
 }
 
 final class SongCellModelFactory {
-    
+   
+    private let imageDownloader = ImageDownloader()
+   
     static func cellModel(from model: ITunesSong) -> SongCellModel {
-    
-    
         
+
         return SongCellModel(trackName: model.trackName,
                              artistName: model.artistName,
                              collectionName: model.collectionName,
