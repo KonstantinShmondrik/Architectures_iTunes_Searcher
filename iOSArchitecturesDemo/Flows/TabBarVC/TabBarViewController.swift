@@ -11,41 +11,28 @@ import UIKit
 
 final class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
-    let image = UIImage(systemName: "app")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        
+        let tabApp = SearchModuleBuilder.build()
+        
+        let tabBarItemApp = UITabBarItem(title: "Apps",
+                                         image: UIImage(systemName: "app"),
+                                         selectedImage: UIImage(systemName: "app.fill"))
+        
+        tabApp.tabBarItem = tabBarItemApp
+        
+        
+        let tabSong = SongSearchModuleBuilder.build()
+        
+        let tabBarItemSong = UITabBarItem(title: "Songs",
+                                          image: UIImage(systemName: "music.mic.circle"),
+                                          selectedImage: UIImage(systemName: "music.mic.circle.fill"))
+        
+        tabSong.tabBarItem = tabBarItemSong
+        
+        
+        self.viewControllers = [tabApp, tabSong]
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let tabOne = SearchModuleBuilder.build()
-        
-
-            let tabOneBarItem = UITabBarItem(title: "Apps",
-                                             image: UIImage(systemName: "app"),
-                                             selectedImage: UIImage(systemName: "app.fill"))
-            
-            tabOne.tabBarItem = tabOneBarItem
-       
-        
-        let tabTwo = SearchModuleBuilder.build()
-
-            let tabTwoBarItem2 = UITabBarItem(title: "Songs",
-                                              image: UIImage(systemName: "music.mic.circle"),
-                                              selectedImage: UIImage(systemName: "music.mic.circle.fill"))
-            
-            tabTwo.tabBarItem = tabTwoBarItem2
-
-        
-        self.viewControllers = [tabOne, tabTwo]
-    }
-    
-    
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        print("Selected \(viewController.title)")
-    }
-    
 }
