@@ -19,6 +19,7 @@ final class NetworkManager {
             response.result
                 .withValue { data in
                     completion?(.success(data))
+                   
                 }
                 .withError {
                     self?.logError($0, request: request)
@@ -32,6 +33,7 @@ final class NetworkManager {
             response.result
                 .withValue { json in
                     completion?(.success(json as? [String: Any]))
+                    
                 }
                 .withError {
                     self?.logError($0, request: request)

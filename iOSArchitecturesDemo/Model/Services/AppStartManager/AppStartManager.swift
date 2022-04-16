@@ -18,8 +18,9 @@ final class AppStartManager {
     
     func start() {
         //        let rootVC = SearchViewController()
-        let rootVC = SearchModuleBuilder.build()
-        
+        //        let rootVC = SearchModuleBuilder.build()
+        let tabBarVC = TabBarViewController()
+        let rootVC = tabBarVC
         rootVC.navigationItem.title = "Search via iTunes"
         
         let navVC = self.configuredNavigationController
@@ -37,4 +38,5 @@ final class AppStartManager {
         navVC.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         return navVC
     }()
+    
 }
