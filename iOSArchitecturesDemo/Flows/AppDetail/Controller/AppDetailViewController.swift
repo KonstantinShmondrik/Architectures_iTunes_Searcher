@@ -72,10 +72,7 @@ final class AppDetailViewController: UIViewController {
     }
     
     private func addDescriptionViewController() {
-        
-        // TODO: ДЗ, сделать другие сабмодули
-        
-//        let descriptionViewController = UIViewController()
+    
         self.addChild(self.descriptionViewController)
         self.view.addSubview(self.descriptionViewController.view)
         self.descriptionViewController.didMove(toParent: self)

@@ -54,15 +54,12 @@ final class SongSearchPresenter {
                 }
         }
     }
-    
-    
-    
+
     private func openSongDetails(with song: ITunesSong) {
         
         // использовать для дальнейшего перехода на экран песни
-        
-        //        let appDetaillViewController = AppDetailViewController(app: song)
-//                self.viewInput?.navigationController?.pushViewController(UIViewController(), animated: true)
+        let songDetaillViewController = SongDetailViewController(song: song)
+        self.viewInput?.navigationController?.pushViewController(songDetaillViewController, animated: true)
     }
 }
 

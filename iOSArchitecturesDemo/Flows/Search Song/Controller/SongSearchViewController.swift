@@ -90,14 +90,11 @@ extension SongSearchViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let song = searchResults[indexPath.row]
         self.presenter.viewDidSelectSong(song)
-        
-        //        let appDetaillViewController = AppDetailViewController(app: app)
-        //        appDetaillViewController.app = app
-                navigationController?.pushViewController(UIViewController(), animated: true) // переход на пустой контроллер
     }
 }
 
 //MARK: - UISearchBarDelegate
+
 extension SongSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -109,7 +106,7 @@ extension SongSearchViewController: UISearchBarDelegate {
             searchBar.resignFirstResponder()
             return
         }
-        //        self.requestApps(with: query)
+        
         self.presenter.viewDidSearch(with: query)
     }
 }
