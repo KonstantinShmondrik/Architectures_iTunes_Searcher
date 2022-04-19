@@ -34,10 +34,19 @@ final class SongSearchPresenter {
     
     weak var viewInput: (UIViewController & SongSearchViewInput)?
     
-    private let searchService = ITunesSearchService()
+    let interactor: SearchSongInteractorInput
+    let router: SearchSongRouterInput
+    
+    
+    init(interactor: SearchSongInteractorInput, router: SearchSongRouterInput) {
+        self.interactor = interactor
+        self.router = router
+    }
+    
+    //MARK: - Private
     
     private func requestSongs(with query: String) {
-        self.searchService.getSongs(forQuery: query) { [weak self] result in
+        self.interactor.requestSongs(with: query) { [weak self] result in
             guard let self = self else { return }
             self.viewInput?.throbber(show: false)
             result
@@ -54,19 +63,12 @@ final class SongSearchPresenter {
                 }
         }
     }
-
-    private func openSongDetails(with song: ITunesSong) {
-        
-        // использовать для дальнейшего перехода на экран песни
-        let songDetaillViewController = SongDetailViewController(song: song)
-        self.viewInput?.navigationController?.pushViewController(songDetaillViewController, animated: true)
-    }
+    
 }
 
 // MARK: - SearchViewOutput
 
 extension SongSearchPresenter: SongSearchViewOutput {
-    
     
     func viewDidSearch(with query: String) {
         self.viewInput?.throbber(show: true)
@@ -74,7 +76,7 @@ extension SongSearchPresenter: SongSearchViewOutput {
     }
     
     func viewDidSelectSong(_ song: ITunesSong) {
-        self.openSongDetails(with: song)
+        self.router.openDetails(for: song)
     }
     
 }
